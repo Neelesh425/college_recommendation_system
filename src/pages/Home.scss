@@ -1,0 +1,89 @@
+@import '../styles/variables';
+
+.home {
+  &__features, &__how {
+    padding: $space-2xl 0;
+  }
+
+  &__features { background: $bg; }
+  &__how { background: $surface-alt; }
+
+  &__section-label {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: $accent-dark;
+    margin-bottom: $space-sm;
+  }
+
+  &__section-title {
+    font-family: $font-display;
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: $space-xl;
+  }
+
+  &__features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: $space-lg;
+  }
+
+  &__feature-card {
+    background: $surface;
+    border-radius: $radius-lg;
+    padding: $space-xl;
+    box-shadow: $shadow-sm;
+    border: 1.5px solid $border;
+    transition: $transition;
+    &:hover { transform: translateY(-4px); box-shadow: $shadow-md; }
+  }
+
+  &__feature-icon { font-size: 2rem; margin-bottom: $space-md; }
+  &__feature-title { font-family: $font-display; font-size: 1.05rem; font-weight: 700; color: $text-dark; margin-bottom: $space-sm; }
+  &__feature-desc { font-size: 0.875rem; color: $text-muted; line-height: 1.6; }
+
+  &__steps {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    position: relative;
+    @media (max-width: $bp-md) { flex-direction: column; gap: $space-lg; }
+  }
+
+  &__step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+
+  &__step-number {
+    font-family: $font-display;
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(37,99,168,0.12);
+    line-height: 1;
+    margin-bottom: $space-md;
+  }
+
+  &__step-content {
+    h3 { font-family: $font-display; font-size: 1.05rem; font-weight: 700; color: $text-dark; margin-bottom: $space-sm; }
+    p { font-size: 0.875rem; color: $text-muted; line-height: 1.6; max-width: 220px; }
+  }
+
+  &__step-line {
+    position: absolute;
+    top: 24px;
+    left: 60%;
+    right: -40%;
+    height: 1px;
+    background: $border;
+    @media (max-width: $bp-md) { display: none; }
+  }
+}

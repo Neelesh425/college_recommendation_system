@@ -1,0 +1,79 @@
+@import '../styles/variables';
+
+.college-detail {
+  background: $bg;
+  padding-bottom: $space-2xl;
+
+  &__hero {
+    background: $bg-dark;
+    padding: $space-xl 0 $space-2xl;
+    margin-bottom: -$space-xl;
+  }
+
+  &__back {
+    background: transparent;
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    margin-bottom: $space-lg;
+    cursor: pointer;
+    transition: $transition;
+    padding: 0;
+    &:hover { color: white; }
+  }
+
+  &__badges {
+    display: flex;
+    gap: $space-sm;
+    margin-bottom: $space-md;
+    flex-wrap: wrap;
+  }
+
+  &__badge {
+    font-family: $font-mono;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    border-radius: $radius-xl;
+    background: rgba(255,255,255,0.1);
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-weight: 900;
+    color: white;
+    margin-bottom: $space-md;
+    line-height: 1.2;
+  }
+
+  &__meta {
+    display: flex;
+    gap: $space-lg;
+    flex-wrap: wrap;
+    font-size: 0.875rem;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: $space-lg;
+    a { color: $accent; transition: $transition; &:hover { color: $accent-dark; } }
+  }
+
+  &__eligible-summary {
+    display: inline-flex;
+    align-items: center;
+    gap: $space-sm;
+    background: rgba(45,138,78,0.15);
+    border: 1px solid rgba(45,138,78,0.3);
+    color: #6fcf97;
+    padding: $space-sm $space-lg;
+    border-radius: $radius-xl;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &__body {
+    padding-top: $space-2xl;
+  }
+}

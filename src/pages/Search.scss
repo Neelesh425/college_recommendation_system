@@ -1,0 +1,46 @@
+@import '../styles/variables';
+
+.search-page {
+  background: $bg;
+  padding-bottom: $space-2xl;
+
+  &__header {
+    padding: $space-xl 0 $space-lg;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    color: $text-dark;
+    margin-bottom: $space-sm;
+  }
+
+  &__subtitle {
+    color: $text-muted;
+    font-size: 1rem;
+  }
+
+  &__layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: $space-xl;
+    align-items: start;
+
+    @media (max-width: $bp-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__form-col {
+    position: sticky;
+    top: 90px;
+    @media (max-width: $bp-lg) { position: static; }
+  }
+
+  &__results-col {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+}
