@@ -1,0 +1,49 @@
+// Color Palette
+$primary: #1a3c5e;
+$primary-light: #2563a8;
+$accent: #f4a225;
+$accent-dark: #d4861a;
+$bg: #f5f3ee;
+$bg-dark: #0f1f35;
+$surface: #ffffff;
+$surface-alt: #eef2f7;
+$text-dark: #0f1f35;
+$text-mid: #3d5a80;
+$text-muted: #7a90a8;
+$success: #2d8a4e;
+$danger: #c0392b;
+$border: #d6dfe8;
+
+// Typography
+$font-display: 'Playfair Display', serif;
+$font-body: 'DM Sans', sans-serif;
+$font-mono: 'JetBrains Mono', monospace;
+
+// Spacing
+$space-xs: 4px;
+$space-sm: 8px;
+$space-md: 16px;
+$space-lg: 24px;
+$space-xl: 40px;
+$space-2xl: 64px;
+
+// Border Radius
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-lg: 20px;
+$radius-xl: 32px;
+
+// Shadows
+$shadow-sm: 0 2px 8px rgba(15, 31, 53, 0.08);
+$shadow-md: 0 4px 20px rgba(15, 31, 53, 0.12);
+$shadow-lg: 0 8px 40px rgba(15, 31, 53, 0.16);
+
+// Breakpoints
+$bp-sm: 576px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Transitions
+$transition: all 0.25s ease;
+$transition-slow: all 0.4s ease;
