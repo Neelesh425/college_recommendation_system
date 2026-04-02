@@ -1,0 +1,185 @@
+@import '../../styles/variables';
+
+.search-form {
+  background: $surface;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  overflow: hidden;
+
+  &__header {
+    background: $primary;
+    padding: $space-xl;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: '◈';
+      position: absolute;
+      right: $space-xl;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 5rem;
+      color: rgba(255,255,255,0.06);
+      line-height: 1;
+    }
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: $space-xs;
+  }
+
+  &__subtitle {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.9rem;
+  }
+
+  &__form {
+    padding: $space-xl;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space-lg;
+    margin-bottom: $space-lg;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: $space-xs;
+  }
+
+  &__label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $text-mid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__hint {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: $text-muted;
+  }
+
+  &__input, &__select {
+    padding: $space-md;
+    border: 1.5px solid $border;
+    border-radius: $radius-md;
+    font-size: 0.95rem;
+    color: $text-dark;
+    background: $bg;
+    transition: $transition;
+    appearance: none;
+    -webkit-appearance: none;
+
+    &:focus {
+      border-color: $primary-light;
+      background: white;
+      box-shadow: 0 0 0 3px rgba(37, 99, 168, 0.1);
+    }
+
+    &::placeholder {
+      color: $text-muted;
+    }
+  }
+
+  &__select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a90a8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right $space-md center;
+    padding-right: $space-xl;
+    cursor: pointer;
+  }
+
+  &__notice {
+    display: flex;
+    align-items: flex-start;
+    gap: $space-sm;
+    padding: $space-md;
+    background: rgba(37, 99, 168, 0.06);
+    border: 1px solid rgba(37, 99, 168, 0.15);
+    border-radius: $radius-md;
+    font-size: 0.82rem;
+    color: $text-mid;
+    margin-bottom: $space-lg;
+    line-height: 1.5;
+
+    &-icon {
+      font-size: 1rem;
+      color: $primary-light;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $space-md;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    padding: $space-md $space-xl;
+    border-radius: $radius-xl;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: $transition;
+    display: inline-flex;
+    align-items: center;
+    gap: $space-sm;
+
+    &--reset {
+      background: transparent;
+      color: $text-muted;
+      border: 1.5px solid $border;
+
+      &:hover {
+        border-color: $text-mid;
+        color: $text-mid;
+      }
+    }
+
+    &--submit {
+      background: $accent;
+      color: $bg-dark;
+      border: 1.5px solid transparent;
+
+      &:hover:not(:disabled) {
+        background: $accent-dark;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 16px rgba(244, 162, 37, 0.3);
+      }
+
+      &:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  &__spinner {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(0,0,0,0.2);
+    border-top-color: $bg-dark;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
