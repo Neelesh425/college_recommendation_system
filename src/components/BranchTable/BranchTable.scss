@@ -1,0 +1,193 @@
+@import '../../styles/variables';
+
+.branch-table {
+  background: $surface;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  overflow: hidden;
+
+  &__header {
+    padding: $space-lg $space-xl;
+    background: $primary;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-family: $font-display;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  &__cat-badge {
+    font-size: 0.78rem;
+    font-family: $font-mono;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.9);
+    padding: 4px 10px;
+    border-radius: $radius-xl;
+  }
+
+  &__list {
+    padding: $space-md;
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+  }
+
+  &__row {
+    border: 1.5px solid $border;
+    border-radius: $radius-md;
+    overflow: hidden;
+    transition: $transition;
+
+    &--eligible {
+      border-color: rgba(45, 138, 78, 0.3);
+      background: rgba(45, 138, 78, 0.02);
+    }
+
+    &--ineligible {
+      border-color: rgba(192, 57, 43, 0.2);
+      background: rgba(192, 57, 43, 0.02);
+    }
+  }
+
+  &__row-header {
+    padding: $space-md $space-lg;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: $transition;
+
+    &:hover {
+      background: $surface-alt;
+    }
+  }
+
+  &__row-left {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+  }
+
+  &__status {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+
+    &--yes {
+      background: rgba(45, 138, 78, 0.12);
+      color: $success;
+    }
+
+    &--no {
+      background: rgba(192, 57, 43, 0.1);
+      color: $danger;
+    }
+  }
+
+  &__branch-name {
+    display: block;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: $text-dark;
+  }
+
+  &__branch-code {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    color: $text-muted;
+  }
+
+  &__row-right {
+    display: flex;
+    align-items: center;
+    gap: $space-md;
+  }
+
+  &__class12 {
+    font-size: 0.78rem;
+    color: $text-muted;
+    font-family: $font-mono;
+  }
+
+  &__toggle {
+    font-size: 0.65rem;
+    color: $text-muted;
+    width: 20px;
+    text-align: center;
+  }
+
+  &__cutoffs {
+    border-top: 1px solid $border;
+  }
+
+  &__cutoffs-inner {
+    padding: $space-lg;
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+
+  &__cutoff-group {
+    h4 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: $text-muted;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: $space-md;
+    }
+  }
+
+  &__cutoff-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: $space-sm;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__cutoff-cell {
+    background: $surface-alt;
+    border-radius: $radius-md;
+    padding: $space-sm;
+    text-align: center;
+    border: 1.5px solid transparent;
+    transition: $transition;
+
+    &--highlight {
+      border-color: $accent;
+      background: rgba(244, 162, 37, 0.08);
+    }
+  }
+
+  &__cutoff-cat {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $text-muted;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  &__cutoff-rank {
+    display: block;
+    font-family: $font-mono;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $text-dark;
+  }
+}

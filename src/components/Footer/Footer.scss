@@ -1,0 +1,65 @@
+@import '../../styles/variables';
+
+.footer {
+  background: $bg-dark;
+  color: rgba(255,255,255,0.5);
+  margin-top: $space-2xl;
+
+  &__inner {
+    padding: $space-2xl $space-lg;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: $space-xl;
+    align-items: start;
+
+    @media (max-width: $bp-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__logo {
+    font-family: $font-display;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    display: block;
+    margin-bottom: $space-sm;
+  }
+
+  &__tagline {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: $space-md;
+
+    a {
+      font-size: 0.88rem;
+      transition: $transition;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &__note {
+    font-size: 0.78rem;
+    line-height: 1.6;
+    padding: $space-md;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: $radius-md;
+    background: rgba(255,255,255,0.03);
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    padding: $space-md;
+    font-size: 0.78rem;
+    font-family: $font-mono;
+  }
+}
