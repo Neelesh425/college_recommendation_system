@@ -1,0 +1,216 @@
+[
+  {
+    "id": 1,
+    "name": "Indian Institute of Technology (ISM) Dhanbad",
+    "state": "Jharkhand",
+    "city": "Dhanbad",
+    "type": "Government",
+    "branches": [
+      {
+        "name": "Computer Science and Engineering",
+        "code": "CSE",
+        "cutoffs": {
+          "JEE_Main": { "General": 8000, "OBC": 12000, "SC": 25000, "ST": 35000, "EWS": 10000 },
+          "WBJEE": { "General": 1000, "OBC": 2000, "SC": 5000, "ST": 7000, "EWS": 1500 }
+        },
+        "min_class12_percentage": 75
+      }
+    ],
+    "nirf_ranking": 15,
+    "website": "https://iitism.ac.in",
+    "established": 1926
+  },
+  {
+    "id": 2,
+    "name": "National Institute of Technology Jamshedpur",
+    "state": "Jharkhand",
+    "city": "Jamshedpur",
+    "type": "Government",
+    "branches": [
+      {
+        "name": "Mechanical Engineering",
+        "code": "ME",
+        "cutoffs": {
+          "JEE_Main": { "General": 35000, "OBC": 50000, "SC": 90000, "ST": 120000, "EWS": 42000 },
+          "WBJEE": { "General": 4000, "OBC": 6000, "SC": 12000, "ST": 18000, "EWS": 5000 }
+        },
+        "min_class12_percentage": 65
+      }
+    ],
+    "nirf_ranking": 90,
+    "website": "https://nitjsr.ac.in",
+    "established": 1960
+  },
+  {
+    "id": 3,
+    "name": "Birsa Institute of Technology Sindri",
+    "state": "Jharkhand",
+    "city": "Dhanbad",
+    "type": "Government",
+    "branches": [
+      {
+        "name": "Electrical Engineering",
+        "code": "EE",
+        "cutoffs": {
+          "JEE_Main": { "General": 90000, "OBC": 120000, "SC": 200000, "ST": 250000, "EWS": 110000 },
+          "WBJEE": { "General": 9000, "OBC": 12000, "SC": 20000, "ST": 25000, "EWS": 11000 }
+        },
+        "min_class12_percentage": 60
+      }
+    ],
+    "nirf_ranking": 200,
+    "website": "https://bitsindri.ac.in",
+    "established": 1949
+  },
+  {
+    "id": 4,
+    "name": "Ranchi University Institute of Engineering and Technology",
+    "state": "Jharkhand",
+    "city": "Ranchi",
+    "type": "Government",
+    "branches": [
+      {
+        "name": "Civil Engineering",
+        "code": "CE",
+        "cutoffs": {
+          "JEE_Main": { "General": 120000, "OBC": 150000, "SC": 250000, "ST": 300000, "EWS": 140000 },
+          "WBJEE": { "General": 12000, "OBC": 15000, "SC": 25000, "ST": 30000, "EWS": 14000 }
+        },
+        "min_class12_percentage": 55
+      }
+    ],
+    "nirf_ranking": 250,
+    "website": "https://ruiet.ac.in",
+    "established": 2000
+  },
+  {
+    "id": 5,
+    "name": "Cambridge Institute of Technology Ranchi",
+    "state": "Jharkhand",
+    "city": "Ranchi",
+    "type": "Private",
+    "branches": [
+      {
+        "name": "Computer Science and Engineering",
+        "code": "CSE",
+        "cutoffs": {
+          "JEE_Main": { "General": 150000, "OBC": 180000, "SC": 300000, "ST": 350000, "EWS": 170000 },
+          "WBJEE": { "General": 15000, "OBC": 18000, "SC": 30000, "ST": 35000, "EWS": 17000 }
+        },
+        "min_class12_percentage": 50
+      }
+    ],
+    "nirf_ranking": 300,
+    "website": "https://cit.edu.in",
+    "established": 2001
+  },
+
+  {
+    "id": 6,
+    "name": "Jadavpur University",
+    "state": "West Bengal",
+    "city": "Kolkata",
+    "type": "Government",
+    "branches": [
+      {
+        "name": "Information Technology",
+        "code": "IT",
+        "cutoffs": {
+          "JEE_Main": { "General": 12000, "OBC": 18000, "SC": 40000, "ST": 60000, "EWS": 15000 },
+          "WBJEE": { "General": 300, "OBC": 600, "SC": 2000, "ST": 3000, "EWS": 500 }
+        },
+        "min_class12_percentage": 75
+      }
+    ],
+    "nirf_ranking": 10,
+    "website": "https://jaduniv.edu.in",
+    "established": 1955
+  },
+  {
+    "id": 7,
+    "name": "Indian Institute of Engineering Science and Technology Shibpur",
+    "state": "West Bengal",
+    "city": "Howrah",
+    "type": "Government",
+    "branches": [
+      {
+        "name": "Mechanical Engineering",
+        "code": "ME",
+        "cutoffs": {
+          "JEE_Main": { "General": 25000, "OBC": 35000, "SC": 70000, "ST": 90000, "EWS": 30000 },
+          "WBJEE": { "General": 2000, "OBC": 3500, "SC": 9000, "ST": 12000, "EWS": 2500 }
+        },
+        "min_class12_percentage": 70
+      }
+    ],
+    "nirf_ranking": 40,
+    "website": "https://iiests.ac.in",
+    "established": 1856
+  },
+  {
+    "id": 8,
+    "name": "Heritage Institute of Technology",
+    "state": "West Bengal",
+    "city": "Kolkata",
+    "type": "Private",
+    "branches": [
+      {
+        "name": "Computer Science and Engineering",
+        "code": "CSE",
+        "cutoffs": {
+          "JEE_Main": { "General": 80000, "OBC": 110000, "SC": 200000, "ST": 250000, "EWS": 95000 },
+          "WBJEE": { "General": 2500, "OBC": 4000, "SC": 10000, "ST": 15000, "EWS": 3000 }
+        },
+        "min_class12_percentage": 60
+      }
+    ],
+    "nirf_ranking": 150,
+    "website": "https://heritageit.edu",
+    "established": 2001
+  },
+  {
+    "id": 9,
+    "name": "Techno India University",
+    "state": "West Bengal",
+    "city": "Kolkata",
+    "type": "Private",
+    "branches": [
+      {
+        "name": "Electronics and Communication Engineering",
+        "code": "ECE",
+        "cutoffs": {
+          "JEE_Main": { "General": 120000, "OBC": 150000, "SC": 250000, "ST": 300000, "EWS": 140000 },
+          "WBJEE": { "General": 6000, "OBC": 9000, "SC": 18000, "ST": 22000, "EWS": 7000 }
+        },
+        "min_class12_percentage": 55
+      }
+    ],
+    "nirf_ranking": 220,
+    "website": "https://technoindiauniversity.ac.in",
+    "established": 2012
+  },
+
+  {
+    "id": 10,
+    "name": "Haldia Institute of Technology",
+    "state": "West Bengal",
+    "city": "Haldia",
+    "type": "Private",
+    "branches": [
+      {
+        "name": "Civil Engineering",
+        "code": "CE",
+        "cutoffs": {
+          "JEE_Main": { "General": 140000, "OBC": 170000, "SC": 280000, "ST": 320000, "EWS": 160000 },
+          "WBJEE": { "General": 8000, "OBC": 11000, "SC": 20000, "ST": 25000, "EWS": 9000 }
+        },
+        "min_class12_percentage": 50
+      }
+    ],
+    "nirf_ranking": 250,
+    "website": "https://hithaldia.ac.in",
+    "established": 1996
+  }
+
+  // 👉 Continue similarly up to 40 colleges
+]
