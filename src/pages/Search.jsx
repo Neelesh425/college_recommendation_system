@@ -2,52 +2,45 @@ import React, { useState } from 'react';
 import SearchForm from '../components/SearchForm/SearchForm';
 import FilterBar from '../components/FilterBar/FilterBar';
 import CollegeList from '../components/CollegeList/CollegeList';
+import { searchColleges } from '../api/api';
 import './Search.scss';
-
-import colleges from '../data/colleges.json';
-
-const matchColleges = (form) => {
-  const { jeeRank, wbjeeRank, class12Percent, category, state, branch, collegeType, affiliation, feesRange } = form;
-  const jee   = parseInt(jeeRank);
-  const wbjee = parseInt(wbjeeRank);
-  const pct   = parseFloat(class12Percent);
-
-  return colleges
-    .filter(college => {
-      if (state !== 'Both' && college.state !== state) return false;
-      if (collegeType !== 'Any' && college.type !== collegeType) return false;
-      if (affiliation !== 'Any' && college.affiliation !== affiliation) return false;
-      if (feesRange !== 'Any' && college.fees_range !== feesRange) return false;
-      return true;
-    })
-    .map(college => {
-      const matchedBranches = college.branches.filter(b => {
-        if (pct < b.min_class12_percentage) return false;
-        if (branch !== 'Any Branch' && b.name !== branch) return false;
-        const jeeOk   = b.cutoffs?.JEE_Main?.[category] && jee   ? jee   <= b.cutoffs.JEE_Main[category] : false;
-        const wbjeeOk = b.cutoffs?.WBJEE?.[category]    && wbjee ? wbjee <= b.cutoffs.WBJEE[category]    : false;
-        return jeeOk || wbjeeOk;
-      });
-      return { college, matchedBranches };
-    })
-    .filter(item => item.matchedBranches.length > 0);
-};
 
 const Search = () => {
   const [results,  setResults]  = useState([]);
   const [loading,  setLoading]  = useState(false);
   const [searched, setSearched] = useState(false);
-  const [filters,  setFilters]  = useState({ state: 'All', type: 'All', sort: 'rank' });
+  const [error,    setError]    = useState(null);
+  const [filters,  setFilters]  = useState({
+    state: 'All',
+    type:  'All',
+    sort:  'rank',
+  });
 
-  const handleSearch = (form) => {
+  const handleSearch = async (form) => {
     setLoading(true);
-    setTimeout(() => {
-      setResults(matchColleges(form));
+    setError(null);
+
+    try {
+      const data = await searchColleges({ ...form, sortBy: filters.sort });
+      // Backend returns { total, results } where each result is
+      // { college, matched_branches, match_score }
+      // Remap to the shape CollegeList / CollegeCard expect
+      const remapped = data.results.map(r => ({
+        college:         r.college,
+        matchedBranches: r.matched_branches,
+        matchScore:      r.match_score,
+      }));
+      setResults(remapped);
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Is the backend running?');
+      setResults([]);
+    } finally {
       setLoading(false);
       setSearched(true);
-    }, 600);
+    }
   };
 
+  // Client-side filter/sort on top of backend results
   const filtered = results
     .filter(r => filters.state === 'All' || r.college.state === filters.state)
     .filter(r => filters.type  === 'All' || r.college.type  === filters.type)
@@ -67,7 +60,12 @@ const Search = () => {
       </div>
 
       <div className="search-page__results container">
-        {searched && (
+        {error && (
+          <div className="search-page__error">
+            ⚠ {error}
+          </div>
+        )}
+        {searched && !error && (
           <FilterBar filters={filters} onChange={setFilters} total={filtered.length} />
         )}
         <CollegeList results={filtered} loading={loading} searched={searched} />
