@@ -2,45 +2,20 @@
 
 .search-page {
   background: $bg;
+  min-height: 100vh;
   padding-bottom: $space-2xl;
 
-  &__header {
-    padding: $space-xl 0 $space-lg;
+  &__top {
+    background: $bg-dark;
+    padding: $space-xl 0 $space-2xl;
+    margin-bottom: -$space-xl;
   }
 
-  &__title {
-    font-family: $font-display;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 900;
-    color: $text-dark;
-    margin-bottom: $space-sm;
-  }
-
-  &__subtitle {
-    color: $text-muted;
-    font-size: 1rem;
-  }
-
-  &__layout {
-    display: grid;
-    grid-template-columns: 380px 1fr;
-    gap: $space-xl;
-    align-items: start;
-
-    @media (max-width: $bp-lg) {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  &__form-col {
-    position: sticky;
-    top: 90px;
-    @media (max-width: $bp-lg) { position: static; }
-  }
-
-  &__results-col {
+  &__results {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: $space-lg;
+    padding-top: $space-xl;
   }
 }
